@@ -2,7 +2,7 @@ package com.nhn.app.exchange.aop;
 
 import com.nhn.app.exchange.order.dto.OrderDTO;
 import com.nhn.app.exchange.order.dto.OrderDeleteDTO;
-import com.nhn.app.exchange.order.event.OrderEvent;
+import com.nhn.app.exchange.order.event.put.OrderEvent;
 import com.nhn.app.exchange.order.event.delete.OrderDeleteEvent;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class OrderEventAOP {
-    @Pointcut("execution(public * com.nhn.app.exchange.order.event.OrderEventConsumer+.handleOrderEvent(..))")
+    @Pointcut("execution(public * com.nhn.app.exchange.order.event.put.OrderEventConsumer+.handleOrderEvent(..))")
     public void orderEventLog(){
 
     }

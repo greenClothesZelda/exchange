@@ -1,9 +1,8 @@
-package com.nhn.app.exchange.order.event;
+package com.nhn.app.exchange.order.event.put;
 
 //TODO 생산자 소비자패턴을 이용해서 threadpool을 만들기
 
 import com.nhn.app.exchange.front.response.OrderResponse;
-import com.nhn.app.exchange.order.dto.OrderDTO;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;

@@ -4,10 +4,9 @@ import com.nhn.app.exchange.front.response.OrderCancelResponse;
 import com.nhn.app.exchange.front.response.OrderResponse;
 import com.nhn.app.exchange.order.dto.OrderDTO;
 import com.nhn.app.exchange.order.dto.OrderDeleteDTO;
-import com.nhn.app.exchange.order.event.OrderEvent;
+import com.nhn.app.exchange.order.event.put.OrderEvent;
 import com.nhn.app.exchange.order.event.delete.OrderDeleteEvent;
 import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
