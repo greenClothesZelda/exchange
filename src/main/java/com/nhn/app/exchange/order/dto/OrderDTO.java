@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-public class Order {
+public class OrderDTO {
     public enum OrderType {
         BUY, SELL
     }
@@ -19,9 +19,9 @@ public class Order {
     private OrderType orderType;
     private LocalDateTime createdAt;
 
-    public Order(){}
+    public OrderDTO(){}
 
-    public Order(int orderId, int productId, int price, int amount, OrderType orderType, LocalDateTime createdAt) {
+    public OrderDTO(int orderId, int productId, int price, int amount, OrderType orderType, LocalDateTime createdAt) {
         this.orderId = orderId;
         this.productId = productId;
         this.price = price;
@@ -31,7 +31,7 @@ public class Order {
     }
 
     //createdAt must be in ISO-8601 format (e.g., "2023-10-05T14:48:00")
-    public Order(int orderId, int productId, int price, int amount, OrderType orderType, String createdAt){
+    public OrderDTO(int orderId, int productId, int price, int amount, OrderType orderType, String createdAt){
         this.orderId = orderId;
         this.productId = productId;
         this.price = price;
@@ -57,13 +57,13 @@ public class Order {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
 
-        Order order = (Order) obj;
+        OrderDTO orderDTO = (OrderDTO) obj;
 
-        if (orderId != order.orderId) return false;
-        if (productId != order.productId) return false;
-        if (price != order.price) return false;
-        if (amount != order.amount) return false;
-        if (orderType != order.orderType) return false;
-        return createdAt != null ? createdAt.equals(order.createdAt) : order.createdAt == null;
+        if (orderId != orderDTO.orderId) return false;
+        if (productId != orderDTO.productId) return false;
+        if (price != orderDTO.price) return false;
+        if (amount != orderDTO.amount) return false;
+        if (orderType != orderDTO.orderType) return false;
+        return createdAt != null ? createdAt.equals(orderDTO.createdAt) : orderDTO.createdAt == null;
     }
 }
