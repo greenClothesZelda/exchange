@@ -1,5 +1,6 @@
 package com.nhn.app.exchange.order.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,11 +13,22 @@ public class OrderDTO {
         BUY, SELL
     }
 
+    @JsonProperty("order_id")
     private int orderId;
+
+    @JsonProperty("product_id")
     private int productId;
+
+    @JsonProperty("price")
     private int price;
+
+    @JsonProperty("amount")
     private int amount;
+
+    @JsonProperty("side")
     private OrderType orderType;
+
+    @JsonProperty("created_at")
     private LocalDateTime createdAt;
 
     public OrderDTO(){}

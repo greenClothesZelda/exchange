@@ -2,6 +2,8 @@ package com.nhn.app.exchange.order.event;
 
 //TODO 생산자 소비자패턴을 이용해서 threadpool을 만들기
 
+import com.nhn.app.exchange.front.response.OrderResponse;
+import com.nhn.app.exchange.order.dto.OrderDTO;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
@@ -17,6 +19,7 @@ public class OrderEventConsumer {
     @Async
     @EventListener
     public void handleOrderEvent(OrderEvent orderEvent) {
-        //TODO orderEvent를 처리하는 로직 작성
+        //TODO orderEvent를 처리하는 로직 작성 (서비스 호출)
+        orderEvent.complete(OrderResponse.ResponseCode.SUCCESS);
     }
 }
